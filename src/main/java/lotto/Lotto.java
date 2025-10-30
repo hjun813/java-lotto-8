@@ -1,17 +1,25 @@
 package lotto;
 
-import java.util.List;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validateSize(numbers);
+        validate(numbers);
+        Collections.sort(numbers);
         this.numbers = numbers;
     }
 
+    public boolean contains(int number){
+        return this.numbers.contains(number);
+    }
+
+    private void validate(List<Integer> numbers){
+        validateSize(numbers);
+        validateDuplicate(numbers);
+        validateInterval(numbers);
+    }
     private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
