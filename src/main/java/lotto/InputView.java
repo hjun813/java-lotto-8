@@ -62,11 +62,22 @@ public class InputView {
 
     public void validateIsIntPurchaseMoney(String inputMoney){
         // 숫자 판별
+        int money;
+        try {
+           money = Integer.parseInt(inputMoney);
+        } catch (NumberFormatException e){
+            throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자여야 합니다.");
+        }
 
     }
 
     public void validateValuePurchaseMoney(String inputMoney){
         // 1000원 단위 판별
+        int money;
+        money = Integer.parseInt(inputMoney);
+        if(money <= 0 || money % 1000 != 0){
+            throw new IllegalArgumentException("[ERROR] 구입 금액은 1,000원 단위여야 합니다.");
+        }
     }
 
     public int parseToMatchNumber(String str){
@@ -74,7 +85,7 @@ public class InputView {
             return Integer.parseInt(str);
         }
         catch(NumberFormatException e){
-            throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자여야 합니다.");
+            throw new IllegalArgumentException("[ERROR] 로또 당첨 번호는 숫자여야 합니다.");
         }
     }
 
