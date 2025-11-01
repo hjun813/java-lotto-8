@@ -17,7 +17,7 @@ public class OutputView {
 
     public void printMatchingResults(Map<Rank, Integer> results){
         System.out.println("\n당첨 통계");
-        System.out.println("\n---");
+        System.out.println("---");
         for(Rank rank : Rank.values()){
             if(rank == Rank.NONE) continue;
             String description = String.format("%s (%,d원)", rank.getDescription(), rank.getPrizeMoney());

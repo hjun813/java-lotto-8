@@ -27,7 +27,7 @@ public class InputView {
     public Lotto readMachingNumbers(){
         while(true){
             try {
-                System.out.println("당첨 번호를 입력해 주세요.");
+                System.out.println("\n당첨 번호를 입력해 주세요.");
                 String inputMatchNumbers = Console.readLine();
                 String[] numberStrings = inputMatchNumbers.split(",");
 
