@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class OutputView {
 
-    public void printPurchasedLottosCount(List<Lotto> lottos){
+    public void printPurchasedLottos(List<Lotto> lottos){
         System.out.println("\n" + lottos.size() + "개를 구매했습니다.");
         for(Lotto lotto : lottos){
             System.out.println(lotto.getNumbers());

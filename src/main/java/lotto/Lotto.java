@@ -6,9 +6,11 @@ public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validate(numbers);
-        Collections.sort(numbers);
-        this.numbers = numbers;
+
+        List<Integer> newNumbers = new ArrayList<>(numbers);
+        validate(newNumbers);
+        Collections.sort(newNumbers);
+        this.numbers = newNumbers;
     }
 
     public boolean contains(int number){
